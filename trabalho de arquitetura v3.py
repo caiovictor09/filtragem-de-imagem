@@ -24,6 +24,8 @@ for i in range(1, linhas - 1):
             (matriz[i][j - 1] * -1) + (matriz[i][j] * 0) + matriz[i][j + 1] +
             (matriz[i + 1][j - 1] * -1) + (matriz[i + 1][j] * 0) + matriz[i + 1][j + 1]
         )
+        if nova_matriz[i][j] < 0:
+            nova_matriz[i][j] = abs(nova_matriz[i][j]) 
 
 # Imprime a matriz atualizada
 print("Matriz Atualizada:")
