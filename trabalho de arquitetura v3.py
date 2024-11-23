@@ -7,14 +7,15 @@ imagem = [223,221,221,224,224,223,224,226,227,227,227,228,228,228,228,230,228,23
 # Dimensões da matriz
 linhas, colunas = 120, 176
 
-# Converte a lista unidimensional em uma matriz 2D
-matriz = [
-    imagem[i * colunas:(i + 1) * colunas]
-    for i in range(linhas)
-]
+# Transformar a lista unidimensional em uma matriz 2D
+matriz = []
+for i in range(linhas):
+    matriz.append(imagem[i * colunas:(i + 1) * colunas])
 
-# Copia a matriz original para armazenar os resultados
-nova_matriz = [linha[:] for linha in matriz]
+# Criar uma cópia da matriz original
+nova_matriz = []
+for linha in matriz:
+    nova_matriz.append(linha[:])
 
 # Aplica o filtro na matriz
 for i in range(1, linhas - 1):
